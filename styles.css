@@ -1,0 +1,487 @@
+/* Général */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    background-color: #3D6FB5;
+    padding: 20px;
+    text-align: center;
+}
+header .logo img {
+    max-width: 250px; /* Taille du logo rectangulaire */
+    height: auto;
+    border-radius: 10px;
+}
+nav ul {
+    list-style-type: none;
+    margin-top: 10px;
+}
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+nav ul li a {
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+nav ul li a:hover {
+    color: #00F1A1;
+}
+
+/* Section Accueil */
+.hero {
+    background-color: #00F1A1;
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+    background-image:radial-gradient(circle, rgba(255, 255, 255, 0.4) 10px, transparent 10px); /* Motif de points plus gros */
+    background-size: 60px 60px; /* Plus gros points et espacement */
+}
+
+/* Design de fond avec des gros points blancs */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.4) 20px, transparent 20px);
+    background-size: 60px 60px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    animation: typing 3s steps(30) 1s forwards;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #3D6FB5;
+    color: white;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.btn-primary:hover {
+    background-color: #00F1A1;
+}
+
+/* Animation de saisie */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Section Services */
+.services {
+    padding: 50px 20px;
+    text-align: center;
+}
+.services h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+.service-items {
+    display: flex;
+    justify-content: space-around;
+}
+.service-item {
+    width: 30%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+.service-item:hover {
+    transform: translateY(-10px);
+}
+
+/* Section Portfolio */
+.portfolio {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+.portfolio h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+.portfolio-items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.portfolio-item {
+    width: 30%;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+.portfolio-item:hover {
+    transform: scale(1.05);
+}
+
+/* Section Avis Clients */
+.testimonials {
+    padding: 50px 20px;
+    text-align: center;
+}
+.testimonials h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+.testimonials-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.testimonial-item {
+    width: 45%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Section Contact */
+.contact {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+.contact button {
+    background-color: #3D6FB5;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.footer a {
+    color: #00F1A1;
+    text-decoration: none;
+    font-size: 16px;
+}
+img{
+    width: 300px;
+}
+
+/* Responsive Design pour les écrans plus petits */
+
+/* Pour les écrans de 768px et moins (tablettes et mobiles) */
+@media screen and (max-width: 768px) {
+    .service-items {
+        flex-direction: column;
+        align-items: center;
+        width: 100%; /* Assure que chaque élément occupe toute la largeur */
+    }
+    .portfolio-items {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .testimonials-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Ajustement du texte dans les sections */
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .services h2, .portfolio h2, .testimonials h2 {
+        font-size: 2em;
+    }
+
+    .portfolio-item, .service-item {
+        width: 80%; /* Largeur plus petite pour les petits écrans */
+        margin-bottom: 20px;
+    }
+
+    /* Ajustement des boutons */
+    .btn-primary {
+        padding: 10px 20px;
+    }
+
+    .contact input, .contact textarea {
+        width: 90%; /* Champs de formulaire plus grands pour les petits écrans */
+    }
+}
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+/* Mode sombre */
+body.dark-mode {
+    background-color: #121212;
+    color: #E0E0E0;
+}
+
+/* Changer la couleur de l'en-tête */
+body.dark-mode header {
+    background-color: #000;
+}
+
+/* Changer la couleur de la section Accueil */
+body.dark-mode .hero {
+    background-color: #1E1E1E;
+    color: #FFF;
+}
+
+/* Changer la couleur des services et portfolio */
+body.dark-mode .services,
+body.dark-mode .portfolio,
+body.dark-mode .testimonials,
+body.dark-mode .contact {
+    background-color: #222;
+    color: #E0E0E0;
+}
+
+/* Changer la couleur des cartes de service */
+body.dark-mode .service-item,
+body.dark-mode .portfolio-item,
+body.dark-mode .testimonial-item {
+    background-color: #333;
+    color: #FFF;
+}
+
+/* Changer la couleur du footer */
+body.dark-mode .footer {
+    background-color: #000;
+    color: #E0E0E0;
+}
+
+/* Boutons et liens en mode sombre */
+body.dark-mode .btn-primary {
+    background-color: #00F1A1;
+    color: #121212;
+}
+body.dark-mode .btn-primary:hover {
+    background-color: #3D6FB5;
+    color: #FFF;
+}
+
+/* Changer la couleur du bouton de mode sombre */
+.toggle-mode {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #3D6FB5;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    z-index: 1000;
+}
+.toggle-mode:hover {
+    background: #00F1A1;
+}
+/* Bouton du mode sombre */
+.toggle-mode {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #3D6FB5;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    z-index: 1000;
+}
+.toggle-mode:hover {
+    background: #00F1A1;
+    transform: scale(1.1);
+}
+
+/* Mode sombre du bouton */
+body.dark-mode .toggle-mode {
+    background: #00F1A1;
+    color: #121212;
+}
+body.dark-mode .toggle-mode:hover {
+    background: #3D6FB5;
+    color: #FFF;
+}
+
+/* Menu burger */
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #3D6FB5;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    z-index: 1000;
+}
+.menu-toggle:hover {
+    background: #00F1A1;
+    transform: scale(1.1);
+}
+
+/* Navigation */
+nav {
+    text-align: center;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+.nav-links li {
+    margin: 0 15px;
+}
+.nav-links a {
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s, transform 0.2s;
+}
+.nav-links a:hover {
+    color: #00F1A1;
+    transform: scale(1.1);
+}
+
+/* Cacher le menu sur mobile */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #3D6FB5;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .menu { display: block; }
+  }
+
+/* Animations micro-interactions */
+.btn-primary {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 241, 161, 0.5);
+}
+
+.service-item, .portfolio-item, .testimonial-item {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.service-item:hover, .portfolio-item:hover, .testimonial-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 241, 161, 0.5);
+}
+
+/* Bouton en mode sombre */
+body.dark-mode .toggle-mode {
+    background: #00F1A1;
+    color: #121212;
+}
+body.dark-mode .toggle-mode:hover {
+    background: #3D6FB5;
+    color: #FFF;
+}
+
+/* Pour les écrans très petits (moins de 480px) */
+@media screen and (max-width: 480px) {
+    .hero {
+        padding: 50px 10px;
+    }
+    .hero h1 {
+        font-size: 1.5em;
+    }
+
+    .service-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .portfolio-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonials-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .portfolio-item, .service-item {
+        width: 90%; /* Largeur plus grande sur les petits écrans */
+    }
+
+    .contact input, .contact textarea {
+        width: 95%; /* Champs encore plus larges */
+    }
+}

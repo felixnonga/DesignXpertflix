@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesignXpert - Agence de Branding et Design Digital</title>
+<meta name="description" content="Flix Design, l'agence qui booste votre image avec des designs uniques et percutants. Contactez-nous pour un branding sur-mesure !">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header avec logo et navigation -->
+    <header>
+        <div class="logo">
+            <img src="logo-agence-designXpert.png" alt="DesignXpert Logo">
+        </div>
+
+        <button class="toggle-mode" onclick="toggleDarkMode()">🌙 Mode sombre</button>
+       
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#avis">Avis Clients</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section d'Accueil -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1 class="typing-effect">Bienvenue chez DesignXpert</h1>
+            <p>Révélez votre image de marque avec un design moderne, créatif et percutant.</p>
+            <a href="#contact" class="btn-primary">Contactez-nous</a>
+        </div>
+    </section>
+
+    <!-- Section Services -->
+    <section id="services" class="services">
+        <h2>Nos Services</h2>
+        <div class="service-items">
+            <div class="service-item">
+                <h3>Branding</h3>
+                <p>Création d'identité visuelle, logos, et chartes graphiques pour un branding unique.</p>
+            </div>
+            <div class="service-item">
+                <h3>Design Web</h3>
+                <p>Conception de sites web modernes, réactifs et optimisés pour une expérience utilisateur optimale.</p>
+            </div>
+            <div class="service-item">
+                <h3>Consulting</h3>
+                <p>Conseils stratégiques pour maximiser l'impact de votre image de marque et de vos projets digitaux.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Portfolio -->
+    <section id="projets" class="portfolio">
+        <h2>Projets</h2>
+        <div class="portfolio-items">
+            <div class="portfolio-item">
+                <img src="WhatsApp Image 2025-03-29 à 13.13.27_66fd067f.jpg" alt="Projet 1">
+                <p>Projet 1 - Branding pour une startup.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="WhatsApp Image 2025-03-29 à 13.23.13_ce921e66.jpg" alt="Projet 2">
+                <p>Projet 2 - Design d'une interface utilisateur.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="WhatsApp Image 2025-03-29 à 13.23.14_4f27a7c0.jpg" alt="Projet 3">
+                <p>Projet 3 - Développement d'un site web pour un événement.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Avis Clients -->
+    <section id="avis" class="testimonials">
+        <h2>Avis Clients</h2>
+        <div class="testimonials-container">
+            <div class="testimonial-item">
+                <p>"DesignXpert a transformé notre identité visuelle. Ils sont vraiment créatifs et à l'écoute de nos besoins."</p>
+                <p><strong>Jean Antoine</strong>, CEO - Startup X</p>
+            </div>
+            <div class="testimonial-item">
+                <p>"Le site web créé par DesignXpert a complètement révolutionné notre présence en ligne. Je recommande vivement !"</p>
+                <p><strong>Celestine Mvondo</strong>, Directrice Marketing - Entreprise Y</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact">
+        <h2>Contactez-nous</h2>
+        <form action="https://formspree.io/f/xzzeaajo" method="POST">
+            <input type="text" id="name" name="name" placeholder="Nom" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <textarea id="message" name="message" placeholder="Message" required></textarea>
+            <button type="submit" class="btn-primary">Envoyer</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 DesignXpert - Tous droits réservés</p>
+            <p>Suivez-nous : <a href="#">Instagram</a> | <a href="#">LinkedIn</a> | <a href="#">Facebook</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>// Mode sombre
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.removeItem('darkMode');
+            }
+        }
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+        }
+        
+        // Menu burger
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }</script>
+</body>
+</html>
